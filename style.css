@@ -1,0 +1,1177 @@
+
+/* =========================================
+   SAURABH TIWARI - CYBER PORTFOLIO
+   THEME: BLACK / RED / WHITE
+========================================= */
+
+
+/* GLOBAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+:root {
+    --black: #080808;
+    --dark: #101010;
+    --red: #e50920;
+    --red-light: #ff263e;
+    --white: #ffffff;
+    --grey: #999999;
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--red);
+    color: white;
+}
+
+
+/* MAIN CONTAINER */
+
+#main {
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 85px;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 99;
+
+    padding: 0 6%;
+
+    background: rgba(8, 8, 8, 0.85);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+#nav > h3 {
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+#nav > h3 b {
+    color: var(--red);
+    font-weight: 800;
+}
+
+.red-star {
+    color: var(--red);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-status {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--grey);
+}
+
+.status-dot {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: #32d583;
+    margin-right: 7px;
+    box-shadow: 0 0 10px #32d583;
+}
+
+#nav button {
+    padding: 12px 23px;
+
+    border-radius: 50px;
+
+    background: var(--red);
+    color: var(--white);
+
+    border: 1px solid var(--red);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#nav button:hover {
+    background: transparent;
+    color: var(--red);
+    box-shadow: 0 0 20px rgba(229, 9, 32, 0.25);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   COMMON PAGE STYLING
+========================================= */
+
+#page,
+#page1,
+#page2,
+#page3 {
+    position: relative;
+
+    height: 100vh;
+    min-height: 650px;
+
+    width: 100vw;
+
+    background: var(--black);
+
+    overflow: hidden;
+}
+
+/*
+   The canvas is pinned for a long scroll distance.
+   Do not clip it at the hero section boundary.
+*/
+#page {
+    overflow: visible;
+    z-index: 1;
+}
+
+
+/* SUBTLE BACKGROUND EFFECT */
+
+#page::before,
+#page1::before,
+#page2::before,
+#page3::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(229, 9, 32, 0.07);
+
+    filter: blur(120px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   PAGE 1 - HERO SECTION
+========================================= */
+
+#page::before {
+    top: 10%;
+    right: -10%;
+}
+
+#page {
+    background:
+        radial-gradient(circle at 80% 50%,
+        rgba(229, 9, 32, 0.08),
+        transparent 35%),
+        var(--black);
+}
+
+
+/* MOVING TEXT */
+
+#loop {
+    display: flex;
+
+    position: absolute;
+
+    top: 29%;
+
+    height: 25%;
+    width: 100%;
+
+    white-space: nowrap;
+
+    font-size: clamp(45px, 7.5vw, 100px);
+
+    z-index: 5;
+}
+
+#loop > h1 {
+    font-weight: 700;
+
+    animation: anim 18s linear infinite;
+
+    padding-right: 40px;
+
+    color: var(--white);
+
+    letter-spacing: -3px;
+}
+
+#loop > h1 b {
+    color: var(--red);
+    font-weight: 900;
+}
+
+#loop > h1 span {
+    -webkit-text-stroke: 1.5px var(--red);
+    color: transparent;
+
+    font-weight: 700;
+}
+
+#loop > h1 i {
+    font-style: normal;
+    color: var(--white);
+}
+
+@keyframes anim {
+
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+/* HERO DESCRIPTION */
+
+#page > h3 {
+    position: absolute;
+
+    top: 56%;
+    left: 6%;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: var(--grey);
+
+    z-index: 10;
+}
+
+#page > h4 {
+    position: absolute;
+
+    top: 69%;
+    left: 6%;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: var(--white);
+
+    z-index: 10;
+}
+
+#page > h4 span {
+    color: var(--red);
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+
+/* CANVAS */
+
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+
+/* HERO FOOTER */
+
+.hero-bottom {
+    position: absolute;
+
+    bottom: 30px;
+    left: 6%;
+
+    width: 88%;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #666;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   PAGE 2 - PHILOSOPHY
+========================================= */
+
+#page1 {
+    background:
+        radial-gradient(circle at 20% 40%,
+        rgba(229, 9, 32, 0.08),
+        transparent 35%),
+        rgba(16, 16, 16, 0.76);
+}
+
+#page1::before {
+    bottom: -20%;
+    left: -10%;
+}
+
+#page1 > #right-text {
+    position: absolute;
+
+    top: 25%;
+    left: 10%;
+
+    z-index: 2;
+}
+
+#page1 > #right-text > h3 {
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: var(--red);
+
+    margin-bottom: 20px;
+}
+
+#page1 > #right-text > h1 {
+    line-height: 1.35;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    transition: 0.3s;
+}
+
+#page1 > #right-text > h1:hover {
+    color: var(--red);
+}
+
+
+#page1 > #left-text {
+    position: absolute;
+
+    top: 52%;
+    right: 10%;
+
+    text-align: end;
+
+    z-index: 2;
+}
+
+#page1 > #left-text > h1 {
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1.35;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+#page1 > #left-text > h3 {
+    margin-top: 20px;
+
+    color: var(--grey);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+#page1 > #left-text > h1:hover {
+    color: var(--red);
+}
+
+
+/* =========================================
+   PAGE 3 - ABOUT ME
+========================================= */
+
+#page2 {
+    background:
+        radial-gradient(circle at 85% 80%,
+        rgba(229, 9, 32, 0.1),
+        transparent 35%),
+        rgba(8, 8, 8, 0.72);
+}
+
+#page2::before {
+    top: -20%;
+    right: -10%;
+}
+
+#page2 > #text1 {
+    position: absolute;
+
+    top: 24%;
+    left: 10%;
+
+    z-index: 2;
+}
+
+#page2 > #text1 > h3 {
+    color: var(--red);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+#page2 > #text1 > h1 {
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1.15;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+#page2 > #text2 {
+    position: absolute;
+
+    top: 55%;
+    right: 10%;
+
+    text-align: end;
+
+    max-width: 500px;
+
+    z-index: 2;
+}
+
+#page2 > #text2 > p {
+    color: #b0b0b0;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   PAGE 4 - PLAYGROUND
+========================================= */
+
+#page3 {
+    background:
+        radial-gradient(circle at 50% 50%,
+        rgba(229, 9, 32, 0.13),
+        transparent 45%),
+        rgba(10, 10, 10, 0.76);
+}
+
+#page3::before {
+    top: 20%;
+    left: 30%;
+}
+
+#page3 > #text3 {
+    position: absolute;
+
+    top: 22%;
+    right: 10%;
+
+    text-align: end;
+
+    z-index: 2;
+}
+
+#page3 > #text3 > h3 {
+    color: var(--red);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+#page3 > #text3 > h1 {
+    font-size: clamp(65px, 9vw, 110px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+
+    -webkit-text-stroke: 1px var(--white);
+
+    color: transparent;
+
+    transition: 0.4s ease;
+}
+
+#page3 > #text3 > h1:hover {
+    color: var(--red);
+
+    -webkit-text-stroke: 1px var(--red);
+}
+
+.closing-text {
+    color: var(--grey);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-top: 30px;
+}
+
+.contact-link {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 28px;
+
+    border: 1px solid var(--red);
+
+    border-radius: 50px;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.contact-link:hover {
+    background: var(--red);
+
+    box-shadow: 0 0 30px rgba(229, 9, 32, 0.4);
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+#footer {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 140px;
+
+    background: #050505;
+
+    border-top: 1px solid var(--border);
+
+    padding: 35px 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.footer-left h3 {
+    font-size: 22px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+}
+
+.footer-left h3 span {
+    color: var(--red);
+}
+
+.footer-left p {
+    color: var(--grey);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-top: 8px;
+}
+
+.footer-right {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 10px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - TABLETS
+========================================= */
+
+@media (max-width: 1024px) {
+
+    #loop {
+        font-size: 65px;
+    }
+
+    #page1 > #right-text > h1,
+    #page1 > #left-text > h1 {
+        font-size: 45px;
+    }
+
+    #page2 > #text1 > h1 {
+        font-size: 55px;
+    }
+
+    #page2 > #text2 {
+        max-width: 400px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #nav {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    #nav > h3 {
+        font-size: 17px;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    .nav-status {
+        display: none;
+    }
+
+    #nav button {
+        padding: 10px 15px;
+
+        font-size: 9px;
+    }
+
+    #page,
+    #page1,
+    #page2,
+    #page3 {
+        min-height: 700px;
+        height: 100svh;
+    }
+
+    #loop {
+        top: 30%;
+
+        font-size: 42px;
+
+        height: auto;
+    }
+
+    #loop > h1 {
+        letter-spacing: -1px;
+    }
+
+    #page > h3 {
+        top: 55%;
+
+        left: 6%;
+
+        right: 5%;
+
+        font-size: 11px;
+
+        line-height: 2;
+    }
+
+    #page > h4 {
+        top: 68%;
+
+        left: 6%;
+
+        font-size: 10px;
+    }
+
+    .hero-bottom {
+        bottom: 20px;
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+    #page1 > #right-text {
+        top: 23%;
+
+        left: 7%;
+    }
+
+    #page1 > #right-text > h3,
+    #page1 > #left-text > h3,
+    #page2 > #text1 > h3,
+    #page3 > #text3 > h3 {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+    #page1 > #right-text > h1,
+    #page1 > #left-text > h1 {
+        font-size: 36px;
+
+        line-height: 1.4;
+    }
+
+    #page1 > #left-text {
+        top: 58%;
+
+        right: 7%;
+    }
+
+    #page2 > #text1 {
+        top: 18%;
+
+        left: 7%;
+    }
+
+    #page2 > #text1 > h1 {
+        font-size: 49px;
+
+        line-height: 1.2;
+    }
+
+    #page2 > #text2 {
+        top: 63%;
+
+        left: 7%;
+
+        right: 7%;
+
+        text-align: left;
+
+        max-width: 100%;
+    }
+
+    #page2 > #text2 > p {
+        font-size: 11px;
+
+        line-height: 1.8;
+    }
+
+    #page3 > #text3 {
+        top: 27%;
+
+        right: 7%;
+    }
+
+    #page3 > #text3 > h1 {
+        font-size: 65px;
+
+        letter-spacing: -3px;
+    }
+
+    .closing-text {
+        font-size: 9px;
+    }
+
+    .contact-link {
+        font-size: 9px;
+
+        padding: 13px 18px;
+    }
+
+    #footer {
+        padding: 30px 6%;
+
+        gap: 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        align-items: flex-start;
+
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================
+   RED GLOW ANIMATION
+========================================= */
+
+@keyframes redGlow {
+
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(229, 9, 32, 0.2);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(229, 9, 32, 0.7);
+    }
+
+}
+
+.red-star {
+    animation: redGlow 2s infinite;
+}
+
+
+/* RED SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--red);
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--red-light);
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+/* =========================================
+   FINAL HERO LAYERING
+   Headline behind character, UI above both
+========================================= */
+
+#page {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Decorative glow stays at the back */
+#page::before {
+    z-index: 0;
+}
+
+/* Moving headline sits behind the canvas character */
+#loop {
+    position: absolute;
+    z-index: 2;
+}
+
+/* Canvas character sits in front of the headline */
+#page > canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Supporting copy remains readable above the character */
+#page > h3,
+#page > h4,
+#page > .hero-bottom {
+    position: absolute;
+    z-index: 10;
+}
+
+/* Navigation always stays on top */
+#nav {
+    z-index: 999;
+}
+
+
+/* =========================================
+   PERSISTENT CANVAS DURING SCROLL
+========================================= */
+
+/* Later sections sit above the pinned hero canvas. */
+#page1,
+#page2,
+#page3 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Keep later section backgrounds slightly transparent so
+   the pinned character remains visible behind their content. */
+#page1 {
+    background-color: rgba(16, 16, 16, 0.76);
+}
+
+#page2 {
+    background-color: rgba(8, 8, 8, 0.72);
+}
+
+#page3 {
+    background-color: rgba(10, 10, 10, 0.76);
+}
+
+/* Keep the hero canvas above the moving headline. */
+#page > canvas {
+    z-index: 5;
+}
+
+#loop {
+    z-index: 2;
+}
+
+
+/* =========================================
+   HERO PINNING / SECTION STACKING FIX
+========================================= */
+
+/* Keep the pinned hero as one complete visual scene. */
+#page {
+    position: relative;
+    z-index: 10;
+    overflow: visible;
+}
+
+/* The hero's pseudo-element is only a background glow. */
+#page::before {
+    z-index: 0;
+}
+
+/* Text scrolls behind the canvas character. */
+#loop {
+    position: absolute;
+    z-index: 2;
+}
+
+/* Character stays above the headline during the pinned sequence. */
+#page > canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Hero labels stay above the character. */
+#page > h3,
+#page > h4,
+#page > .hero-bottom {
+    position: absolute;
+    z-index: 10;
+}
+
+/* Following sections appear after the hero pin completes. */
+#page1,
+#page2,
+#page3 {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   FIXED CHARACTER LAYER ACROSS THE WEBSITE
+========================================= */
+
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Canvas is moved to body by script.js and stays fixed
+   while the document scrolls normally. */
+#character-canvas {
+    position: fixed !important;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Keep the site content above the fixed character.
+   Backgrounds are translucent so the character remains visible. */
+#main {
+    position: relative;
+    background: transparent;
+    z-index: auto;
+}
+
+/* Do not create a stacking context around the hero;
+   the fixed canvas must be able to sit between background and text. */
+#page {
+    isolation: auto !important;
+}
+
+#page {
+    background:
+        radial-gradient(circle at 80% 50%, rgba(229, 9, 32, 0.08), transparent 35%),
+        transparent !important;
+}
+
+#page1 {
+    background:
+        radial-gradient(circle at 20% 40%, rgba(229, 9, 32, 0.08), transparent 35%),
+        rgba(16, 16, 16, 0.48) !important;
+}
+
+#page2 {
+    background:
+        radial-gradient(circle at 85% 80%, rgba(229, 9, 32, 0.1), transparent 35%),
+        rgba(8, 8, 8, 0.48) !important;
+}
+
+#page3 {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(229, 9, 32, 0.13), transparent 45%),
+        rgba(10, 10, 10, 0.48) !important;
+}
+
+#footer {
+    background: rgba(5, 5, 5, 0.72) !important;
+}
+
+/* The headline sits behind the character canvas.
+   Supporting text and navigation remain above it. */
+#loop {
+    z-index: 0;
+}
+
+#page > h3,
+#page > h4,
+#page > .hero-bottom,
+#page1 > #right-text,
+#page1 > #left-text,
+#page2 > #text1,
+#page2 > #text2,
+#page3 > #text3 {
+    z-index: 2;
+}
+
+#nav {
+    z-index: 9999;
+    position: fixed;
+}
+
+/* Keep section glow subtle without hiding the character. */
+#page::before,
+#page1::before,
+#page2::before,
+#page3::before {
+    z-index: 0;
+    pointer-events: none;
+}
